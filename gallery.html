@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .thumbnail {
+            width: 200px;
+            height: 150px;
+            overflow: hidden;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.2s;
+        }
+
+        .thumbnail:hover img {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Brazil Gallery</title>
+</head>
+<body>
+
+    <div class="nav-container">
+        <nav class="navbar">
+            <h1 id="navbar-logo">JAEEMNA</h1>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="events.html" class="nav-links">Events</a></li>
+                <li><a href="gallery.html" class="nav-links">Gallery</a></li>
+                <li><a href="news.html" class="nav-links">News</a></li>
+                <li><a href="about.html" class="nav-links">Contact Us</a></li>
+                <li><a href="signup.html" class="nav-links nav-links-btn">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <a href="index.html">Back</a>
+    <div class="gallery" id="gallery">
+        <div class="thumbnail" onclick="openModal('img/brzl2.jpg')">
+            <img src="img/brzl2.jpg" alt="Brazil Image 0">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/brzl5.jpg')">
+            <img src="img/brzl5.jpg" alt="Brazil Image 1">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/brzl6.jpg')">
+            <img src="img/brzl6.jpg" alt="Brazil Image 2">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/brzl3.jpg')">
+            <img src="img/brzl3.jpg" alt="Brazil Image 3">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/brzl8.jpg')">
+            <img src="img/brzl8.jpg" alt="Brazil Image 4">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/brzl1.jpg')">
+            <img src="img/brzl1.jpeg" alt="Brazil Image 5">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/rio.jpg')">
+            <img src="img/rio.jpg" alt="Brazil Image 6">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/rio1.jpg')">
+            <img src="img/rio1.jpg" alt="Brazil Image 7">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/rio2.jpg')">
+            <img src="img/rio2.jpg" alt="Brazil Image 8">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/parantin.jpg')">
+            <img src="img/parantin.jpg" alt="Brazil Image 9">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/parantin-1.jpg')">
+            <img src="img/parantin-1.jpg" alt="Brazil Image 10">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/parantin-2.jpg')">
+            <img src="img/parantin-2.jpg" alt="Brazil Image 11">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/junina.jpg')">
+            <img src="img/junina.jpg" alt="Brazil Image 12">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/junina1.jpg')">
+            <img src="img/junina1.jpg" alt="Brazil Image 2">
+        </div>
+        <div class="thumbnail" onclick="openModal('img/junina2.jpg')">
+            <img src="img/junina2.jpg" alt="Brazil Image 3">
+        </div>
+        <div class="modal" id="modal">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <img id="modal-content" alt="Modal Image">
+        </div>
+    </div>
+
+    <script>
+        function openModal(imagePath) {
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            modalContent.src = imagePath;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>

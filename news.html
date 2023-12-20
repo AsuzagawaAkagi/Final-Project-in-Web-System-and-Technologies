@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>News Page</title>
+</head>
+<body>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.news-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-article {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.news-article h2 {
+    color: #333;
+}
+
+.news-article p {
+    color: #666;
+}
+
+.news-article button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.news-article.expanded p {
+    display: block;
+}
+
+.news-article:not(.expanded) p {
+    display: none;
+}
+    </style>
+    <div class="news-container">
+        <h1>Latest News</h1>
+        <div class="news-article" id="article1">
+            <h2>Parintins Folk Festival in Brazil</h2>
+            <div class="external-link">
+                <br>
+                <a href="https://abcnews.go.com/Travel/story?id=118890&page=1" target="_blank">Read more on Euronews</a>
+            </div>
+            <br>
+            <p>P A R I N T I N S, Brazil, July 19 -- — Fireworks light up the sky and hundreds of drums ripple through the night, but it is a thundering, collective “moo” that sets the tone at this bizarre jungle carnival deep in the heart of the Amazon.</p>
+            <button onclick="toggleReadMore('article1')">Read More</button>
+        </div>
+            <br>
+        <div class="news-article" id="article1">
+            <h2>Shootings, soccer stars and sequins: The agony and the ecstasy inside Rio Carnival's samba schools</h2>
+            <div class="external-link">
+                <br>
+                <a href="https://www.euronews.com/travel/2023/02/23/shootings-soccer-stars-and-sequins-the-agony-and-the-ecstasy-inside-rio-carnivals-samba-sc" target="_blank">Read more on Euronews</a>
+            </div>
+            <br>
+            <p>Rio de Janeiro carnival is billed as the world’s biggest party. But the annual event is much more than just spectacle.</p>
+            <button onclick="toggleReadMore('article1')">Read More</button>
+        </div>
+        <div class="news-article" id="article1">
+            <h2>Brazil lawsuits link JBS to destruction of Amazon in protected area, seek millions in damages</h2>
+            <div class="external-link">
+                <br>
+                <a href="https://www.independent.co.uk/news/brazil-ap-rondonia-jbs-amazon-b2466756.html" target="_blank">Read more on Euronews</a>
+            </div>
+            <br>
+            <p>In an unusual series of legal actions, Brazilian prosecutors have sued multinational meatpacker JBS and three smaller slaughterhouses for allegedly buying cattle directly from illegal ranches in a protected area.</p>
+            <button onclick="toggleReadMore('article1')">Read More</button>
+        </div>
+        <div class="news-article" id="article2">
+            <h2>Brazil celebrates return of the Rio de Janeiro Carnival</h2>
+            <div class="external-link">
+                <br>
+                <a href="https://www.euronews.com/culture/2023/02/19/brazil-celebrates-the-return-of-the-rio-de-janeiro-carnival" target="_blank">Read more on Euronews</a>
+            </div>
+            <br>
+            <p>Brazil's iconic carnival week is back in full swing for the first time in three years following the Covid-19 pandemic. Millions are expected to take part in the festivities which include parades, 'blocos' and samba dancers.</p>
+            <button onclick="toggleReadMore('article2')">Read More</button>
+        </div>
+        <br>
+        <div class="news-article" id="article1">
+            <h2>Want to know more about Brazil? click the link below.</h2>
+            <div class="external-link">
+                <br>
+                <a href="https://www.linkedin.com/posts/brazilian-report_festa-junina-is-so-popular-in-brazil-that-activity-6956334675422294016-_rMk?trk=public_profile_like_view" target="_blank">Read more about Brazil.</a>
+            </div>
+            <br>
+            
+        </div>
+        <br>
+        <a href="index.html">Back to Home page</a>
+    </div>
+
+    <script>
+        function toggleReadMore(articleId) {
+            const article = document.getElementById(articleId);
+            const readMoreButton = article.querySelector('button');
+
+            if (article.classList.contains('expanded')) {
+                article.classList.remove('expanded');
+                readMoreButton.innerText = 'Read More';
+            } else {
+                article.classList.add('expanded');
+                readMoreButton.innerText = 'Show Less';
+            }
+        }
+    </script>
+</body>
+</html>

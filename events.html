@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=Montserrat&family=Nunito&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --darkgray: #212329;
+            --brightred: #f9423d;
+            --white: #fff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            color: var(--darkgray);
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-container {
+            background-color: var(--darkgray);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #navbar-logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links {
+            text-decoration: none;
+            color: var(--white);
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links:hover {
+            color: var(--brightred);
+        }
+
+        .nav-links-btn {
+            background-color: var(--brightred);
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .nav-links-btn:hover {
+            background-color: transparent;
+            border: 1px solid var(--brightred);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--white);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        @media  screen and (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--darkgray);
+                z-index: 1;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                text-align: center;
+                padding: 10px;
+            }
+
+            .nav-links,
+            .nav-links-btn {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+
+            #navbar-logo {
+                margin-left: 20px;
+            }
+
+            .menu-toggle .bar:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .menu-toggle .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle .bar:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+
+        .banner {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .event-section {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--brightred);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            border: 1px solid var(--brightred);
+        }
+
+        .underline-text {
+            text-decoration: underline;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="nav-container">
+        <nav class="navbar">
+            <h1 id="navbar-logo">JAEEMNA</h1>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="events.html" class="nav-links">Events</a></li>
+                <li><a href="gallery.html" class="nav-links">Gallery</a></li>
+                <li><a href="news.html" class="nav-links">News</a></li>
+                <li><a href="contact.html" class="nav-links">Contact Us</a></li>
+                <li><a href="#" class="nav-links nav-links-btn">Sign Up</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="banner">
+        <div class="slider">
+            <div class="slide">
+                <section class="event-section">
+                    <h2><strong><em>Upcoming Event: Explore Brazil</em></strong></h2>
+                    <p><em>Join us for an exciting event to explore the beauty and culture of Brazil.</em></p>
+                    <br>
+                    <p><strong><em><u>Rio Carnival</u></em></strong></p>
+                    <p><strong>Date:</strong> [Friday, February 9, 2024 - Saturday, February 17, 2024]</p>
+                    <p><strong>Location:</strong> [Marvelous City of Rio de Janeiro.]</p>
+                    <br>
+                    <p><strong><em><u>Parintins Folklore Festival</u></em></strong></p>
+                    <p><strong>Date:</strong> [On the last weekend of June on Friday, Saturday and Monday]</p>
+                    <p><strong>Location:</strong> [In the heart of Purtuguese]</p>
+                    <br>
+                    <p><strong><em><u>Festa Junina</u></em></strong></p>
+                    <p><strong>Date:</strong> [Sat, Jun 1, 2024 - Sun, Jun 30, 2024]</p>
+                    <p><strong>Location:</strong> [All regions of Brazil, especially in the Northeast]</p>
+                    <br>
+                    <p><em>Wanna know more about Brazil? check the latest news now or you can view some images that represents Brazil in Gallery Page.</em></p>
+                    <br>
+                    <a href="news.html" class="btn">Visit News Page</a>
+                    <br>
+                    <br>
+                    <a href="gallery.html" class="btn">Go to Gallery</a>
+                    <br>
+                    <br>
+                    <a href="index.html">Back to Home Page</a>
+                </section>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.querySelector('.nav-menu');
+
+            mobileMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
